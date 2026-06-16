@@ -28,8 +28,42 @@
         // }
 
         // 寫法 3 條件運算子
-        let msg = (age >= 20) ? "請記得投票" :
-            (isNaN(age)) ? "請輸入數字" : "下次再來";
+        // let msg = (age >= 20) ? "請記得投票" :
+        //     (isNaN(age)) ? "請輸入數字" : "下次再來";
+
+        // 寫法 4
+        // let msg;
+        // if (isNaN(age) == true) {
+        //     msg = "請輸入數字";
+        // } else if ((age >= 20) == true) {
+        //     msg = "請記得投票";
+        // } else {
+        //     msg = "下次再來";
+        // }
+
+        // switch 1
+        // switch(條件){
+        //     case 值:
+        //         break;
+        // }
+
+        // switch 2
+        // switch (值) {
+        //     case 條件:
+        //         break;
+        // }
+        let msg;
+        switch (true) {
+            case age >= 20:
+                msg = "請記得投票";
+                break;
+            case age < 20:
+                msg = "下次再來";
+                break;
+
+            default:
+                msg = "請輸入數字";
+        }
 
         alert(msg)
     </script>
