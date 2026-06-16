@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字串的搜尋方法</title>
+</head>
+
+<body>
+
+    <script>
+        // indexOf 找索引
+        let sentence = "今天是陰天，我最喜歡陰天了，我常常在陰天出去玩";
+        console.log(sentence.indexOf("陰天")); // -1 找不到
+        console.log(sentence.indexOf("陰天", 4)); // 第二個參數, 偏移
+        console.log(sentence.indexOf("陰天", sentence.indexOf("陰天") + 1));
+
+        // 從字串尾開始找
+        console.log(sentence.lastIndexOf("陰天"));
+
+        // search 就是支援正規表達式的 indexOf
+        console.log(sentence.search("陰天"));
+        const str1 = "abcd123"
+        console.log(str1.search(/\d/));
+        const str2 = "hello JavaScript";
+        console.log(str2.search(/[A-Z]/));
+
+        // match
+        console.log(sentence.match("陰天"));
+        console.log(sentence.match(/陰天/g));
+        console.log(sentence.matchAll("陰天"));
+        console.log(Array.from(sentence.matchAll("陰天")));
+        console.log(Array.from(sentence.matchAll("陰天"))[1].index);
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
