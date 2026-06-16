@@ -33,7 +33,14 @@
 
 
     <script>
-        const today = new Date()
+        const today = new Date(2026, 5, 14)
+        const day2 = new Date(2026, 5, 14)
+        // 比較日期物件, 轉字串比較, 能夠比較{相等}
+        // 或是使用 >= 的方式比較
+        // 就是無法用 == 比較
+        console.log(today.toISOString() == day2.toISOString());
+
+        const week = ["日", "一", "二", "三", "四", "五", "六"]
         console.log(today);
         console.log(today.toDateString());
         console.log(today.toISOString());
@@ -43,6 +50,16 @@
         console.log(today.getMonth()); // 從 0 計算
         console.log(today.getDate());
         console.log(today.getDay());
+
+        const dy = document.querySelector(".dy");
+        const dm = document.querySelector(".dm");
+        const dd = document.querySelector(".dd");
+        const ddy = document.querySelector(".ddy");
+
+        dy.innerHTML = today.getFullYear();
+        dm.innerHTML = today.getMonth() + 1;
+        dd.innerHTML = today.getDate();
+        ddy.innerHTML = week[today.getDay()];
 
     </script>
 </body>
