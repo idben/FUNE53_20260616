@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: rgb(130, 130, 130);
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+        }
+
+        article {
+            position: relative;
+            width: 400px;
+            padding-top: 100px;
+        }
+
+        .showText {
+            background-color: rgb(248, 247, 202);
+            box-sizing: border-box;
+            width: 408px;
+            min-height: 50px;
+            border-radius: 10px;
+            padding: 10px;
+            padding-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        input[name=tagInput] {
+            width: 400px;
+            font-size: 30px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .focus {
+            outline: 5px solid rgb(238, 157, 7);
+        }
+
+        .tag {
+            background-color: rgb(234, 71, 155);
+            border-radius: 5px;
+            padding: 5px;
+            color: #fff;
+            line-height: 40px;
+        }
+    </style>
+    <title>輸入相關</title>
+</head>
+
+<body>
+    <section>
+        <article>
+            <div class="showText"></div>
+            <input name="tagInput" type="text">
+        </article>
+    </section>
+
+    <script>
+        const tagInput = document.querySelector("input[name=tagInput]");
+        const showText = document.querySelector(".showText");
+
+        tagInput.addEventListener("focus", function () {
+            this.classList.add("focus");
+        });
+        tagInput.addEventListener("blur", function () {
+            this.classList.remove("focus");
+        });
+        tagInput.addEventListener("input", function () {
+            showText.innerText = this.value;
+        });
+    </script>
+</body>
+
+</html>
