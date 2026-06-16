@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for 迴圈</title>
+</head>
+
+<body>
+
+    <script>
+        const list = [
+            {
+                date: "2019-08-08 10:10",
+                info: "a1 感興趣，統計作品客。"
+            },
+            {
+                date: "2020-09-08 10:10",
+                info: "a2 追求一半甚至，準確。"
+            },
+            {
+                date: "2021-09-08 10:10",
+                info: "a3 工商回事本人，分類。"
+            },
+            {
+                date: "2021-10-08 10:10",
+                info: "a4 做到娛樂主板總數寬。"
+            },
+            {
+                date: "2022-09-08 10:10",
+                info: "a5 下載具體抱著，反覆。"
+            }
+        ];
+
+        for (let i = 0; i < list.length; i++) {
+            if (new Date(list[i].date) >= new Date("2021-01-01")
+                &&
+                new Date(list[i].date) <= new Date("2021-12-31")) {
+                continue;
+            }
+            console.log(list[i].info);
+        }
+
+        for (let i = 0; i < 10; i++) {
+            if (i == 3) {
+                continue;
+            }
+            console.log(i);
+        }
+    </script>
+</body>
+
+</html>
