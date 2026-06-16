@@ -34,6 +34,17 @@
         console.log(Array.from(sentence.matchAll("陰天"))[1].index);
 
 
+        // includes 會回答 true/false 的 indexOf
+        console.log(sentence.includes("陰天"));
+        console.log(sentence.includes("陰天天"));
+        console.log(sentence.includes("陰天", 19));
+
+
+        //
+        console.log(sentence.startsWith("陰天"));
+        console.log(sentence.startsWith("今天"));
+        console.log(sentence.startsWith("陰天", 3));
+
 
 
 
