@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .today {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+
+            .d {
+                font-size: 26px;
+                color: #e81717;
+                font-weight: bold;
+                font-family: sans-serif;
+            }
+        }
+    </style>
+    <title>時間物件</title>
+</head>
+
+<body>
+    <div class="today">
+        <div class="d dy">2026</div>年
+        <div class="d dm">10</div>月
+        <div class="d dd">10</div>日 (
+        <div class="d ddy">一</div>)
+    </div>
+
+
+    <script>
+        const today = new Date()
+        console.log(today);
+        console.log(today.toDateString());
+        console.log(today.toISOString());
+        console.log(today.toLocaleDateString());
+        console.log(today.toLocaleString());
+        console.log(today.getFullYear());
+        console.log(today.getMonth()); // 從 0 計算
+        console.log(today.getDate());
+        console.log(today.getDay());
+
+    </script>
+</body>
+
+</html>
