@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        .date-old {
+            background-color: #d5d3d3;
+        }
+
+        .date-fea {
+            background-color: #f7dea6;
+        }
+
         .today {
             display: flex;
             align-items: center;
@@ -39,6 +47,18 @@
         // 或是使用 >= 的方式比較
         // 就是無法用 == 比較
         console.log(today.toISOString() == day2.toISOString());
+        switch (true) {
+            case today.toISOString() == day2.toISOString():
+                document.body.classList.remove("date-old");
+                document.body.classList.remove("date-fea");
+                break;
+            case today > day2:
+                document.body.classList.add("date-old");
+                break;
+            case today < day2:
+                document.body.classList.add("date-fea");
+                break;
+        }
 
         const week = ["日", "一", "二", "三", "四", "五", "六"]
         console.log(today);
