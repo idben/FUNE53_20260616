@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .boxs {
+            display: flex;
+            gap: 10px;
+
+            .box {
+                width: 50px;
+                height: 50px;
+                background-color: #a5eeec;
+                font-family: sans-serif;
+                font-size: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                user-select: none;
+                border-radius: 50%;
+
+                &.tt {
+                    background-color: #0ca9a3;
+                }
+            }
+        }
+
+        .ctrls {
+            display: flex;
+            justify-content: flex-end;
+        }
+    </style>
+    <title>點選後刪除</title>
+</head>
+
+<body>
+    <div class="boxs">
+        <!-- .box*10.box$>{$} -->
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+        <div class="box box6">6</div>
+        <div class="box box7">7</div>
+        <div class="box box8">8</div>
+        <div class="box box9">9</div>
+        <div class="box box10">10</div>
+    </div>
+    <div class="ctrls">
+        <button type="button">刪除</button>
+    </div>
+
+    <script>
+        const boxs = document.querySelectorAll(".box");
+        const btn_del = document.querySelector("button");
+
+        const ary = Array.from(boxs)
+        console.log(ary);
+
+        // ary.pop().remove()
+        // console.log(ary.pop().className.includes("tt"));
+        while (ary.length > 0) {
+            const node = ary.pop();
+            // node.onclick = function(){}
+            node.onclick = nodeClick;
+        }
+
+        // 事件的寫法之一, 可以複數的指定
+        btn_del.addEventListener("click", function () {
+            const ary = Array.from(boxs)
+            while (ary.length > 0) {
+                const node = ary.pop();
+                if (node.className.includes("tt")) {
+                    node.remove()
+                }
+            }
+        });
+
+        function nodeClick() {
+            // this : f 開頭的 function, 被指定給一個元素的事件
+            // this 會等同該元素
+            this.classList.toggle("tt")
+        }
+    </script>
+</body>
+
+</html>
