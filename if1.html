@@ -30,8 +30,12 @@
         const dialog2_btn_ok = document.querySelectorAll("#dialog2 button")[0];
         const dialog2_btn_cal = document.querySelectorAll("#dialog2 button")[1];
 
+        dialog2_btn_ok.onclick = canVote
+        dialog2_btn_cal.onclick = canVote
+
         // let age = parseInt(prompt("請輸入年紀"));
         // console.log(isNaN(age));
+        dialog2.showModal();
 
         // 寫法 1
         // let msg;
@@ -76,7 +80,7 @@
 
         let msg;
         function canVote() {
-
+            let age = parseInt(dialog2_input.value)
             switch (true) {
                 case age >= 20:
                     msg = "請記得投票";
@@ -89,6 +93,7 @@
                     msg = "請輸入數字";
             }
 
+            dialog2.close();
             dialog1_msg.innerHTML = msg;
             dialog1.showModal();
         }
