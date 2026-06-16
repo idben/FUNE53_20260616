@@ -8,10 +8,30 @@
 </head>
 
 <body>
+    <dialog id="dialog1">
+        <div class="msg"></div>
+        <button>確定</button>
+    </dialog>
+
+    <dialog id="dialog2">
+        <label for="age_input">請輸入年紀:</label>
+        <input type="text" id="age_input">
+        <button>確定</button>
+        <button>取消</button>
+    </dialog>
 
     <script>
-        let age = parseInt(prompt("請輸入年紀"));
-        console.log(isNaN(age));
+        const dialog1 = document.querySelector("#dialog1");
+        const dialog1_msg = document.querySelector("#dialog1 .msg");
+        const dialog1_btn = document.querySelector("#dialog1 button");
+
+        const dialog2 = document.querySelector("#dialog2");
+        const dialog2_input = document.querySelector("#dialog2 input");
+        const dialog2_btn_ok = document.querySelectorAll("#dialog2 button")[0];
+        const dialog2_btn_cal = document.querySelectorAll("#dialog2 button")[1];
+
+        // let age = parseInt(prompt("請輸入年紀"));
+        // console.log(isNaN(age));
 
         // 寫法 1
         // let msg;
@@ -52,20 +72,30 @@
         //     case 條件:
         //         break;
         // }
-        let msg;
-        switch (true) {
-            case age >= 20:
-                msg = "請記得投票";
-                break;
-            case age < 20:
-                msg = "下次再來";
-                break;
 
-            default:
-                msg = "請輸入數字";
+
+        let msg;
+        function canVote() {
+
+            switch (true) {
+                case age >= 20:
+                    msg = "請記得投票";
+                    break;
+                case age < 20:
+                    msg = "下次再來";
+                    break;
+
+                default:
+                    msg = "請輸入數字";
+            }
+
+            dialog1_msg.innerHTML = msg;
+            dialog1.showModal();
         }
 
-        alert(msg)
+        dialog1_btn.onclick = function () {
+            dialog1.close()
+        }
     </script>
 </body>
 
