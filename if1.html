@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>判斷式 1</title>
+</head>
+
+<body>
+
+    <script>
+        let age = parseInt(prompt("請輸入年紀"));
+        console.log(isNaN(age));
+
+        // 寫法 1
+        // let msg;
+        // if (age >= 20) {
+        //     msg = "請記得投票";
+        // } else {
+        //     msg = "下次再來";
+        // }
+
+        // 寫法 2
+        // let msg = "下次再來";
+        // if (age >= 20) {
+        //     msg = "請記得投票";
+        // }
+
+        // 寫法 3 條件運算子
+        let msg = (age >= 20) ? "請記得投票" :
+            (isNaN(age)) ? "請輸入數字" : "下次再來";
+
+        alert(msg)
+    </script>
+</body>
+
+</html>

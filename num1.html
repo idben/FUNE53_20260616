@@ -21,7 +21,9 @@
 
 
         // toString
-        console.log((123).toString().padStart(5, "A"));
+        console.log((123).toString().padStart(5, "A")); // 顯性轉法
+        console.log((456 + "").padEnd(5, "B")); // 隱性轉法
+
 
         // toFixed 小數點下取幾位, 結果會變字串
         const x = 3.1415
@@ -31,6 +33,8 @@
 
         // Number 轉數字
         console.log(Number(x.toFixed(2)) + 3);
+        console.log(parseFloat(x.toFixed(2)) + 3);
+        console.log(parseInt(x.toFixed(2)) + 3);
 
 
 
